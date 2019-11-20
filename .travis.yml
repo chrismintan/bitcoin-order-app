@@ -13,17 +13,18 @@ notifications:
     on_failure: always
 branches:
   only:
-    - development
+   - development
 before_script:
   - npm install -g @angular/cli
   - npm install -g now
 script:
   - ng build --prod --base-href https://chrismintan.github.io/bitcoin-order-app/
 
+
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: 45ed3bd86fe71850ab523c7ed6767864820a1a67
+  github_token: $GITHUB_TOKEN
   local_dir: dist/bitcoin
   edge: true
   on:
