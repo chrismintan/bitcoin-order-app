@@ -23,7 +23,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: 1bbf0b73e7011e0632ceccc32d840755d68196f1
+  github_token: $GITHUB_TOKEN
   local_dir: dist/bitcoin
   on:
     branch: development
